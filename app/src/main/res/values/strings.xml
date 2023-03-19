@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">SpaceX Rockets</string>
+
+    <!-- Strings used for fragments for navigation -->
+    <string name="spacex_rocket_splash_label">SpaceX Rocket Splash</string>
+    <string name="spacex_rocket_label">SpaceX Rocket</string>
+    <string name="spacex_rocket_details_label">SpaceX Rocket Details</string>
+
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="app">App</string>
+
+    <string name="load.progress.bar">Loading Progress Bar</string>
+    <string name="active">Active</string>
+    <string name="inactive">Inactive</string>
+
+</resources>

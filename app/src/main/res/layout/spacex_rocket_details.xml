@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_white">
+
+    <include
+        android:id="@+id/custom_toolbar"
+        layout="@layout/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_0dp"
+        android:background="@color/light_white"
+        app:layout_constraintStart_toStartOf="@+id/custom_toolbar"
+        app:layout_constraintTop_toBottomOf="@+id/custom_toolbar"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_10dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:listitem="@layout/details_image_slider" />
+
+            <TextView
+                android:id="@+id/tv_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/open_sans_bold"
+                android:text="The Falcon 1 was an expendable launch system privately developed and manufactured by SpaceX during 2006-2009. On 28 September 2008, Falcon 1 became the first privately-developed liquid-fuel launch vehicle to go into orbit around the Earth."
+                android:textColor="@color/light_grey"
+                android:textSize="@dimen/font_13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recycler_view" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margin_24dp"
+                android:layout_marginBottom="@dimen/margin_24dp"
+                android:paddingBottom="@dimen/margin_50dp"
+                app:layout_constraintEnd_toStartOf="@+id/tv_description"
+                app:layout_constraintStart_toStartOf="@+id/tv_description"
+                app:layout_constraintTop_toBottomOf="@+id/tv_description">
+
+                <TextView
+                    android:id="@+id/tv_status_label"
+                    android:layout_width="@dimen/margin_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text="Active Status"
+                    android:textColor="@color/light_grey"
+                    android:textSize="@dimen/font_13sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_percent="@dimen/percent_0.5" />
+
+                <TextView
+                    android:id="@+id/tv_status"
+                    android:layout_width="@dimen/margin_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:gravity="center"
+                    android:text="Active"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_13sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_percent="@dimen/percent_0.5" />
+
+                <TextView
+                    android:id="@+id/tv_cost_label"
+                    android:layout_width="@dimen/margin_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text="Cost per launch"
+                    android:textColor="@color/light_grey"
+                    android:textSize="@dimen/font_13sp"
+                    app:layout_constraintStart_toStartOf="@+id/tv_status_label"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_status_label"
+                    app:layout_constraintWidth_percent="@dimen/percent_0.5" />
+
+                <TextView
+                    android:id="@+id/tv_cost"
+                    android:layout_width="@dimen/margin_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:gravity="center"
+                    android:text="6700000"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_13sp"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_status"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_status"
+                    app:layout_constraintWidth_percent="@dimen/percent_0.5" />
+
+                <TextView
+                    android:id="@+id/tv_success_rate_label"
+                    android:layout_width="@dimen/margin_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text="Success Rate percent"
+                    android:textColor="@color/light_grey"
+                    android:textSize="@dimen/font_13sp"
+                    app:layout_constraintStart_toStartOf="@+id/tv_cost_label"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_cost_label"
+                    app:layout_constraintWidth_percent="@dimen/percent_0.5" />
+
+                <TextView
+                    android:id="@+id/tv_success_rate"
+                    android:layout_width="@dimen/margin_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:gravity="center"
+                    android:text="40"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_13sp"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_cost"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_cost"
+                    app:layout_constraintWidth_percent="@dimen/percent_0.5" />
+
+                <TextView
+                    android:id="@+id/tv_height_label"
+                    android:layout_width="@dimen/margin_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text="Height"
+                    android:textColor="@color/light_grey"
+                    android:textSize="@dimen/font_13sp"
+                    app:layout_constraintStart_toStartOf="@+id/tv_success_rate_label"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_success_rate_label"
+                    app:layout_constraintWidth_percent="@dimen/percent_0.5" />
+
+                <TextView
+                    android:id="@+id/tv_height"
+                    android:layout_width="@dimen/margin_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:gravity="center"
+                    android:text="22.25 mt, 37 ft"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_13sp"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_success_rate"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_success_rate"
+                    app:layout_constraintWidth_percent="@dimen/percent_0.5" />
+
+                <TextView
+                    android:id="@+id/tv_diameter_label"
+                    android:layout_width="@dimen/margin_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text="Diameter"
+                    android:textColor="@color/light_grey"
+                    android:textSize="@dimen/font_13sp"
+                    app:layout_constraintStart_toStartOf="@+id/tv_height_label"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_height_label"
+                    app:layout_constraintWidth_percent="@dimen/percent_0.5" />
+
+                <TextView
+                    android:id="@+id/tv_diameter"
+                    android:layout_width="@dimen/margin_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:gravity="center"
+                    android:text="1.68 mt, 5.5 ft"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_13sp"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_height"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_height"
+                    app:layout_constraintWidth_percent="@dimen/percent_0.5" />
+
+                <TextView
+                    android:id="@+id/tv_wikipedia_link_label"
+                    android:layout_width="@dimen/margin_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:text="Wikipedia link"
+                    android:textColor="@color/light_grey"
+                    android:textSize="@dimen/font_13sp"
+                    app:layout_constraintStart_toStartOf="@+id/tv_diameter_label"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_diameter_label"
+                    app:layout_constraintWidth_percent="@dimen/percent_0.5" />
+
+                <TextView
+                    android:id="@+id/tv_wikipedia_link"
+                    android:layout_width="@dimen/margin_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:gravity="center"
+                    android:text="https://en.wikipedia.org/wiki/Falcon_1"
+                    android:textSize="@dimen/font_12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_diameter"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_diameter"
+                    app:layout_constraintWidth_percent="@dimen/percent_0.5" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
+

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/spacexRocketSplashFragment">
+
+    <fragment
+        android:id="@+id/spacexRocketSplashFragment"
+        android:name="com.spacex.rockets.presentation.space_rocket_splash.SpacexRocketSplashFragment"
+        android:label="@string/spacex_rocket_splash_label"
+        tools:layout="@layout/spacex_rocket_splash">
+
+        <action
+            android:id="@+id/action_spacexRocketSplash_to_SpacexRocket"
+            app:destination="@id/SpacexRocketFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@+id/spacexRocketSplashFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/SpacexRocketFragment"
+        android:name="com.spacex.rockets.presentation.space_rocket.SpacexRocketFragment"
+        android:label="@string/spacex_rocket_label"
+        tools:layout="@layout/spacex_rockets">
+
+        <action
+            android:id="@+id/action_SpacexRocket_to_SpacexRocketDetails"
+            app:destination="@id/SpacexRocketDetailsFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/SpacexRocketDetailsFragment"
+        android:name="com.spacex.rockets.presentation.space_rocket_details.SpacexRocketDetailsFragment"
+        android:label="@string/spacex_rocket_details_label"
+        tools:layout="@layout/spacex_rocket_details">
+
+        <argument
+            android:name="rocket"
+            app:argType="com.spacex.rockets.data.model.Rocket" />
+
+    </fragment>
+
+</navigation>
