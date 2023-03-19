@@ -15,5 +15,4 @@
 |:----:|:----:|:----:|
 
 ## Demo
-
-<img src="demo/demo.mp4" width=300/>
+https://user-images.githubusercontent.com/99521892/226182712-7b584b9a-26ca-4e2e-a201-0dca919d705a.mp4
