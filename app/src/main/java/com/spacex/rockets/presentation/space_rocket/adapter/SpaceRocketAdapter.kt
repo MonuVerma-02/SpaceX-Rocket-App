@@ -1,5 +1,6 @@
 package com.spacex.rockets.presentation.space_rocket.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -22,6 +23,7 @@ class SpaceRocketAdapter(
 
     class TaskListViewHolder(private val binding: SpacexRocketItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
+        @SuppressLint("SetTextI18n")
         fun bind(rocketItem: Rocket?, context: Context, onItemClicked: (rocket: Rocket) -> Unit) {
             binding.textViewName.text = rocketItem?.name
             binding.textViewCountry.text = rocketItem?.country

@@ -1,5 +1,6 @@
 package com.spacex.rockets.presentation.space_rocket.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -21,6 +22,7 @@ class ImageSlideAdapter(private val context: Context, private var imageList: Lis
         return view === `object`
     }
 
+    @SuppressLint("InflateParams")
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
         val view: View =
             (context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater).inflate(

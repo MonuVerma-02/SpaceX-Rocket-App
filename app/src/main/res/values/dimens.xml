@@ -54,6 +54,7 @@
     <dimen name="margin_350dp">350dp</dimen>
     <dimen name="margin_300dp">300dp</dimen>
 
+    <dimen name="fab_margin">16dp</dimen>
 
     <dimen name="percent_0.2">0.2</dimen>
     <dimen name="percent_0.4">0.4</dimen>

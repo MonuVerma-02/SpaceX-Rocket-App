@@ -1,5 +1,6 @@
 package com.spacex.rockets.presentation.space_rocket
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -32,7 +33,7 @@ class SpacexRocketFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = SpacexRocketsBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -73,15 +74,17 @@ class SpacexRocketFragment : Fragment() {
         }
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun bindAdapter(rockets: Rockets) {
         spacexAdapter = SpaceRocketAdapter(requireActivity()) { rocket ->
             onItemClick(rocket)
         }
 
-        if (binding.recyclerView?.adapter != null) {
-            binding.recyclerView?.adapter?.notifyDataSetChanged()
+        val currentAdapter = binding.recyclerView.adapter
+        if (currentAdapter != null) {
+            currentAdapter.notifyDataSetChanged()
         } else {
-            binding.recyclerView?.adapter = spacexAdapter
+            binding.recyclerView.adapter = spacexAdapter
             spacexAdapter?.setTasksList(rockets)
         }
     }

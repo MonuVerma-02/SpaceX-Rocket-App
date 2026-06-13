@@ -23,12 +23,12 @@ class SpaceXRocketViewModel @Inject constructor(
     }
 
     fun onFragmentReadyToView() {
-        if (rocketsState.value?.rockets?.rocketList?.isNullOrEmpty() == true) {
+        if (rocketsState.value?.rockets?.rocketList?.isEmpty() == true) {
             getAllRockets()
         }
     }
 
-    fun getAllRockets() {
+    private fun getAllRockets() {
         viewModelScope.launch {
             getRocketsUseCase.invoke().collect { result ->
                 when (result) {

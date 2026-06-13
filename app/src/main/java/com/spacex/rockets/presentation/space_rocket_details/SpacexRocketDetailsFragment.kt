@@ -1,5 +1,6 @@
 package com.spacex.rockets.presentation.space_rocket_details
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.text.util.Linkify
 import androidx.fragment.app.Fragment
@@ -27,7 +28,7 @@ class SpacexRocketDetailsFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         _binding = SpacexRocketDetailsBinding.inflate(inflater, container, false)
         return binding.root
@@ -41,6 +42,7 @@ class SpacexRocketDetailsFragment : Fragment() {
         initialiseListener()
     }
 
+    @SuppressLint("SetTextI18n")
     private fun initialiseUiView() {
         binding.customToolbar.toolbarTitle.text = args.rocket.name
         binding.tvDescription.text = args.rocket.description
